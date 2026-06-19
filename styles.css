@@ -136,16 +136,32 @@ a {
 }
 
 .hero {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1.1fr);
-  gap: clamp(32px, 5vw, 72px);
+  position: relative;
+  display: flex;
   align-items: center;
-  padding: clamp(64px, 8vw, 104px) clamp(20px, 5vw, 72px) 48px;
+  min-height: clamp(560px, 72svh, 740px);
+  padding: clamp(64px, 8vw, 104px) clamp(20px, 6vw, 88px);
   overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(255, 248, 244, 0.98) 0%, rgba(255, 248, 244, 0.92) 36%, rgba(255, 248, 244, 0.56) 61%, rgba(255, 248, 244, 0.08) 100%),
+    url("./assets/clinic-room-hero.png") center right / cover no-repeat;
+  border-bottom: 1px solid rgba(234, 216, 205, 0.7);
+  isolation: isolate;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background:
+    radial-gradient(circle at 18% 78%, rgba(117, 183, 158, 0.14), transparent 28%),
+    radial-gradient(circle at 76% 16%, rgba(237, 159, 132, 0.16), transparent 24%);
+  pointer-events: none;
 }
 
 .hero-copy {
-  max-width: 640px;
+  width: min(660px, 100%);
 }
 
 .eyebrow {
@@ -166,8 +182,14 @@ p {
 
 h1 {
   margin-bottom: 20px;
-  font-size: clamp(38px, 5vw, 58px);
+  max-width: 760px;
+  font-size: clamp(34px, 5vw, 58px);
   line-height: 1.12;
+  text-wrap: balance;
+}
+
+h1 span {
+  display: block;
 }
 
 h2 {
@@ -185,6 +207,7 @@ h3 {
 .lead {
   color: var(--muted);
   font-size: clamp(17px, 2vw, 20px);
+  max-width: 590px;
 }
 
 .hero-actions {
@@ -206,32 +229,41 @@ h3 {
 .trust-list li {
   padding: 8px 12px;
   color: var(--green-dark);
-  background: var(--surface-green);
+  background: rgba(238, 248, 241, 0.88);
   border: 1px solid #d9ecdf;
   border-radius: 999px;
   font-size: 14px;
   font-weight: 700;
 }
 
-.hero-visual {
-  position: relative;
-  margin: 0;
-  border-radius: 24px;
-  overflow: hidden;
-  background: var(--surface);
-  box-shadow: var(--shadow);
+.hero-proof {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 620px;
+  margin-top: 30px;
 }
 
-.hero-visual img {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
+.hero-proof span {
+  min-height: 72px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1px solid rgba(234, 216, 205, 0.86);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 28px rgba(112, 71, 55, 0.08);
 }
 
-.hero-visual figcaption {
+.hero-proof strong {
+  display: block;
+  color: var(--peach-dark);
+  font-size: 13px;
+}
+
+.hero-caption {
   position: absolute;
-  right: 16px;
-  bottom: 14px;
+  right: clamp(20px, 4vw, 56px);
+  bottom: 18px;
+  margin: 0;
   padding: 6px 10px;
   color: var(--muted);
   background: rgba(255, 255, 255, 0.84);
@@ -538,11 +570,12 @@ h3 {
   }
 
   .hero {
-    padding-top: 44px;
-  }
-
-  .hero-visual {
-    order: -1;
+    min-height: auto;
+    padding-top: 64px;
+    padding-bottom: 56px;
+    background:
+      linear-gradient(180deg, rgba(255, 248, 244, 0.98) 0%, rgba(255, 248, 244, 0.9) 54%, rgba(255, 248, 244, 0.72) 100%),
+      url("./assets/clinic-room-hero.png") center bottom / cover no-repeat;
   }
 
   .check-grid,
@@ -575,12 +608,34 @@ h3 {
   }
 
   .hero {
-    padding: 28px 16px 32px;
+    padding: 44px 16px 42px;
+  }
+
+  .hero .eyebrow {
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: 32px;
+    line-height: 1.18;
+  }
+
+  .lead {
+    max-width: 18em;
   }
 
   .hero-actions,
   .trust-list {
     display: grid;
+  }
+
+  .hero-proof {
+    display: none;
+  }
+
+  .hero-caption {
+    display: none;
   }
 
   .button {
