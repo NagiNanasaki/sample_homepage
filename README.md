@@ -7,6 +7,7 @@
 - `index.html` - ページ本体
 - `styles.css` - スタイル
 - `assets/clinic-room-hero.png` - サンプルビジュアル
+- `assets/clinic-room-photo.jpg` - ヒーロー用写真素材（Pexels photo ID: 4170175）
 - `.github/workflows/pages.yml` - GitHub Pagesデプロイ用ワークフロー
 
 ## 注意
