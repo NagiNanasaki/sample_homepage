@@ -182,11 +182,29 @@ a {
 .hero-media::after {
   position: absolute;
   inset: 0;
+  z-index: 1;
   content: "";
   background: linear-gradient(90deg, rgba(16, 42, 38, 0.66) 0%, rgba(16, 42, 38, 0.34) 42%, rgba(16, 42, 38, 0.04) 76%);
+  pointer-events: none;
 }
 
-.hero-media img {
+.hero-slider,
+.hero-slide {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-slide {
+  margin: 0;
+  opacity: 0;
+  transition: opacity 900ms ease;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+}
+
+.hero-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -194,11 +212,54 @@ a {
   filter: saturate(0.94) contrast(1.02);
 }
 
+.hero-controls {
+  position: absolute;
+  right: 50%;
+  bottom: 86px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  transform: translateX(50%);
+}
+
+.hero-dot,
+.hero-pause {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  color: #fff;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.92);
+  border: 0;
+  border-radius: 50%;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  opacity: 0.86;
+}
+
+.hero-dot.is-active {
+  background: #36a9c9;
+  transform: scale(1.45);
+}
+
+.hero-pause {
+  width: 34px;
+  height: 34px;
+  color: #0078b8;
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
 .hero-message {
   position: absolute;
   top: 50%;
   left: clamp(24px, 6vw, 92px);
-  z-index: 1;
+  z-index: 2;
   width: min(620px, calc(100% - 48px));
   color: #fff;
   transform: translateY(-50%);
@@ -758,7 +819,7 @@ h3 {
     min-height: 520px;
   }
 
-  .hero-media img {
+  .hero-slide img {
     object-position: center;
   }
 
@@ -785,6 +846,11 @@ h3 {
 
   .hero-message .lead {
     max-width: 21em;
+  }
+
+  .hero-controls {
+    bottom: 112px;
+    gap: 16px;
   }
 
   .guide-cards {

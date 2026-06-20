@@ -6,8 +6,10 @@
 
 - `index.html` - ページ本体
 - `styles.css` - スタイル
-- `assets/clinic-room-hero.png` - サンプルビジュアル
-- `assets/clinic-room-photo.jpg` - ヒーロー用写真素材（Pexels photo ID: 4170175）
+- `scripts.js` - トップスライドショー
+- `assets/slide-room-bright.jpg` - ヒーロー用写真素材（Unsplash photo ID: o4OJfrmMC0o）
+- `assets/slide-massage-room.jpg` - ヒーロー用写真素材（Unsplash photo ID: oAvwAKFiU7Q）
+- `assets/slide-chiropractic.jpg` - ヒーロー用写真素材（Unsplash photo ID: Cyw1t03KMGk）
 - `.github/workflows/pages.yml` - GitHub Pagesデプロイ用ワークフロー
 
 ## 注意

@@ -11,9 +11,10 @@
     <meta property="og:title" content="はるいろ整体院 | 産後・育児中の身体の悩みに寄り添う整体院" />
     <meta property="og:description" content="七咲式Web制作設計図をもとに制作した、AIホームページ制作の架空サンプルサイトです。" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="./assets/clinic-room-photo.jpg" />
+    <meta property="og:image" content="./assets/slide-room-bright.jpg" />
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="./scripts.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -44,7 +45,23 @@
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-media">
-          <img src="./assets/clinic-room-photo.jpg" alt="清潔感のある整体院内の写真" />
+          <div class="hero-slider" data-slider>
+            <figure class="hero-slide is-active" data-slide>
+              <img src="./assets/slide-room-bright.jpg" alt="白を基調にした清潔感のある施術室" />
+            </figure>
+            <figure class="hero-slide" data-slide>
+              <img src="./assets/slide-massage-room.jpg" alt="落ち着いた照明の施術ベッドと院内空間" />
+            </figure>
+            <figure class="hero-slide" data-slide>
+              <img src="./assets/slide-chiropractic.jpg" alt="カイロベッドのあるシンプルな施術室" />
+            </figure>
+            <div class="hero-controls" aria-label="メインビジュアルの操作">
+              <button class="hero-dot is-active" type="button" data-slide-to="0" aria-label="1枚目の写真を表示"></button>
+              <button class="hero-dot" type="button" data-slide-to="1" aria-label="2枚目の写真を表示"></button>
+              <button class="hero-dot" type="button" data-slide-to="2" aria-label="3枚目の写真を表示"></button>
+              <button class="hero-pause" type="button" data-slider-toggle aria-label="スライドショーを一時停止">Ⅱ</button>
+            </div>
+          </div>
           <div class="hero-message">
             <p class="eyebrow">Postpartum body care</p>
             <h1 id="hero-title">産後のからだを、安心して整える。</h1>
