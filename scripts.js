@@ -43,16 +43,18 @@ const revealTargets = [
   ".visit-panel",
   ".sample-notice",
   ".section-heading",
-  ".split > div",
-  ".concept-card",
+  ".concept-layout > *",
+  ".concept-values",
   ".check-grid article",
-  ".reason-grid article",
+  ".number-item",
+  ".reason-card",
+  ".voice-card",
   ".service-steps article",
   ".flow-list li",
-  ".price > div",
+  ".staff-layout > *",
   ".price-card",
   ".faq-list details",
-  ".access > div",
+  ".access-layout > *",
   ".info-list",
   ".final-cta",
 ].join(",");
@@ -64,7 +66,7 @@ if (revealItems.length > 0) {
 
   revealItems.forEach((item, index) => {
     item.classList.add("scroll-reveal");
-    item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+    item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 80}ms`);
   });
 
   if (reduceMotion || !("IntersectionObserver" in window)) {
@@ -80,8 +82,8 @@ if (revealItems.length > 0) {
         });
       },
       {
-        rootMargin: "0px 0px -12% 0px",
-        threshold: 0.12,
+        rootMargin: "0px 0px -10% 0px",
+        threshold: 0.1,
       },
     );
 
@@ -178,4 +180,82 @@ if (slider) {
 
   showSlide(0);
   start();
+}
+
+const counters = document.querySelectorAll("[data-count]");
+
+if (counters.length > 0 && "IntersectionObserver" in window) {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const animateCounter = (el) => {
+    const target = parseInt(el.dataset.count, 10);
+    if (reduceMotion) {
+      el.textContent = target.toLocaleString();
+      return;
+    }
+
+    const duration = 1800;
+    const start = performance.now();
+
+    const step = (now) => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(target * eased).toLocaleString();
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else {
+        el.textContent = target.toLocaleString();
+      }
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  const counterObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 },
+  );
+
+  counters.forEach((counter) => counterObserver.observe(counter));
+}
+
+const floatingCta = document.querySelector("[data-floating-cta]");
+
+if (floatingCta) {
+  const showThreshold = 600;
+  let floatingVisible = false;
+
+  const toggleFloating = () => {
+    const shouldShow = window.scrollY > showThreshold;
+    if (shouldShow !== floatingVisible) {
+      floatingVisible = shouldShow;
+      floatingCta.classList.toggle("is-visible", shouldShow);
+    }
+  };
+
+  let floatingTicking = false;
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!floatingTicking) {
+        floatingTicking = true;
+        requestAnimationFrame(() => {
+          toggleFloating();
+          floatingTicking = false;
+        });
+      }
+    },
+    { passive: true },
+  );
+
+  toggleFloating();
 }

@@ -13,10 +13,17 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./assets/slide-room-bright.jpg" />
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=recruit-badge-1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=v3-polish" />
     <script src="./scripts.js" defer></script>
   </head>
   <body>
+    <a class="floating-cta" href="https://example.com" aria-label="LINEで相談する（サンプルリンク）" data-floating-cta>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386a.63.63 0 0 1-.627-.629V8.108a.63.63 0 0 1 .627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016a.63.63 0 0 1-.63.631.618.618 0 0 1-.51-.262l-2.444-3.317v2.948a.63.63 0 0 1-1.26 0V8.108a.63.63 0 0 1 .63-.631c.2 0 .378.092.495.238l2.47 3.342V8.108a.63.63 0 0 1 1.249 0v4.771zm-5.741 0a.63.63 0 0 1-1.26 0V8.108a.63.63 0 0 1 1.26 0v4.771zm-2.527.631H4.856a.63.63 0 0 1-.63-.631V8.108a.63.63 0 0 1 1.261 0v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.631-.629.631zM12 1C5.926 1 1 5.02 1 10.009c0 4.459 3.966 8.195 9.325 8.904.363.078.857.24.982.55.112.282.073.724.036 1.009l-.159.953c-.048.291-.225 1.14 1.001.621 1.225-.518 6.608-3.888 9.015-6.655C23.075 13.367 23 11.78 23 10.009 23 5.02 18.074 1 12 1z"/></svg>
+      <span>LINEで相談</span>
+    </a>
     <header class="site-header">
       <div class="header-main">
         <a class="brand" href="#top" aria-label="はるいろ整体院 トップへ">
@@ -46,8 +53,10 @@
         <a href="#problems">初めての方</a>
         <a href="#concept">当院について</a>
         <a href="#reasons">選ばれる理由</a>
+        <a href="#voice">お客様の声</a>
         <a href="#services">施術内容</a>
         <a href="#price">料金</a>
+        <a href="#staff">スタッフ紹介</a>
         <a href="#access">アクセス</a>
       </nav>
     </header>
@@ -73,11 +82,15 @@
             </div>
           </div>
           <div class="hero-message">
-            <p class="eyebrow">Postpartum body care</p>
-            <h1 id="hero-title">産後のからだを、安心して整える。</h1>
+            <p class="eyebrow serif">Postpartum body care</p>
+            <h1 id="hero-title">産後のからだを、<br />安心して整える。</h1>
             <p class="lead">
-              腰・骨盤・肩まわりの違和感を、丁寧なヒアリングと無理のない整体で整える架空サンプルサイトです。
+              腰・骨盤・肩まわりの違和感を、丁寧なヒアリングと<br class="pc-only" />無理のない整体で整えます。
             </p>
+            <a class="hero-cta" href="#reserve">
+              <span>LINEで初回相談を予約する</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-4-4 4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
           <a class="recruit-badge" href="https://example.com" aria-label="採用情報のサンプルリンク">
             <span>RECRUIT</span>
@@ -87,32 +100,44 @@
         </div>
         <div class="guide-cards" aria-label="目的別メニュー">
           <a class="guide-card" href="#problems">
-            <span>01</span>
+            <span class="guide-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a10 10 0 1 1-20 0 10 10 0 0 1 20 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
             <strong>はじめて相談される方</strong>
             <small>不安や悩みを確認する</small>
           </a>
           <a class="guide-card" href="#flow">
-            <span>02</span>
+            <span class="guide-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
             <strong>施術の流れを知りたい方</strong>
             <small>予約から初回相談まで</small>
           </a>
           <a class="guide-card" href="#services">
-            <span>03</span>
+            <span class="guide-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
             <strong>産後ケアを受けたい方</strong>
             <small>腰・骨盤・肩のケア</small>
           </a>
           <a class="guide-card" href="#price">
-            <span>04</span>
+            <span class="guide-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
             <strong>料金を確認したい方</strong>
             <small>掲載前に事実確認が必要</small>
           </a>
           <a class="guide-card" href="#faq">
-            <span>05</span>
+            <span class="guide-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
             <strong>よくある質問を見たい方</strong>
             <small>子ども連れ・服装など</small>
           </a>
           <a class="guide-card" href="#access">
-            <span>06</span>
+            <span class="guide-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="11" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
+            </span>
             <strong>アクセスを確認したい方</strong>
             <small>店舗情報と予約方法</small>
           </a>
@@ -129,6 +154,10 @@
         </div>
       </section>
 
+      <div class="wave-divider wave-hero-to-body" aria-hidden="true">
+        <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="currentColor"/></svg>
+      </div>
+
       <section class="sample-notice" aria-label="サンプルサイトについて">
         <strong>このページは架空サンプルです。</strong>
         <span>七咲式Web制作設計図をもとに、GitHub Pages向けの静的サイトとして制作しています。</span>
@@ -136,7 +165,7 @@
 
       <section class="section problems" id="problems">
         <div class="section-heading">
-          <p class="eyebrow">Check</p>
+          <p class="eyebrow serif">Check</p>
           <h2>こんなお悩みはありませんか？</h2>
           <p>病院に行くほどではないけれど、毎日の中で少しずつつらさを感じている方へ。</p>
         </div>
@@ -150,61 +179,168 @@
         </div>
       </section>
 
-      <section class="section split" id="concept">
-        <div>
-          <p class="eyebrow">Concept</p>
-          <h2>育児中の身体に、無理のないケアを</h2>
-          <p>
-            はるいろ整体院では、まず丁寧にお話を伺い、身体の状態を確認するところから始めます。強い施術や不安をあおる説明ではなく、今の状態に合わせて無理のないケアを一緒に考えます。
-          </p>
-          <p>
-            施術だけで終わらず、日常で取り入れやすいセルフケアもお伝えします。育児中でも自分の身体を少しずつ整えられるよう、やさしく伴走します。
-          </p>
-        </div>
-        <div class="concept-card">
-          <span>大切にしていること</span>
-          <ul>
-            <li>初回ヒアリングを丁寧に行う</li>
-            <li>状態に合わせた施術を提案する</li>
-            <li>強引な回数券販売をしない</li>
-            <li>自宅でできるケアも伝える</li>
-          </ul>
+      <div class="wave-divider wave-problems-to-concept" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,20 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="currentColor"/></svg>
+      </div>
+
+      <section class="section concept-section" id="concept">
+        <div class="concept-layout">
+          <div class="concept-image">
+            <img src="./assets/concept-care.jpg" alt="やさしく身体を整える施術の様子" loading="lazy" />
+          </div>
+          <div class="concept-text">
+            <p class="eyebrow serif">Concept</p>
+            <h2>育児中の身体に、<br />無理のないケアを</h2>
+            <p>
+              はるいろ整体院では、まず丁寧にお話を伺い、身体の状態を確認するところから始めます。強い施術や不安をあおる説明ではなく、今の状態に合わせて無理のないケアを一緒に考えます。
+            </p>
+            <p>
+              施術だけで終わらず、日常で取り入れやすいセルフケアもお伝えします。育児中でも自分の身体を少しずつ整えられるよう、やさしく伴走します。
+            </p>
+            <div class="concept-values">
+              <div class="concept-value">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.707 5.293a1 1 0 0 1 0 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L8 12.586l7.293-7.293a1 1 0 0 1 1.414 0z" fill="currentColor"/></svg>
+                <span>初回ヒアリングを丁寧に行う</span>
+              </div>
+              <div class="concept-value">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.707 5.293a1 1 0 0 1 0 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L8 12.586l7.293-7.293a1 1 0 0 1 1.414 0z" fill="currentColor"/></svg>
+                <span>状態に合わせた施術を提案する</span>
+              </div>
+              <div class="concept-value">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.707 5.293a1 1 0 0 1 0 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L8 12.586l7.293-7.293a1 1 0 0 1 1.414 0z" fill="currentColor"/></svg>
+                <span>強引な回数券販売をしない</span>
+              </div>
+              <div class="concept-value">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M16.707 5.293a1 1 0 0 1 0 1.414l-8 8a1 1 0 0 1-1.414 0l-4-4a1 1 0 1 1 1.414-1.414L8 12.586l7.293-7.293a1 1 0 0 1 1.414 0z" fill="currentColor"/></svg>
+                <span>自宅でできるケアも伝える</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="section" id="reasons">
+      <section class="numbers" id="numbers" aria-label="実績サンプル">
+        <div class="numbers-inner">
+          <p class="numbers-note">※以下はサンプル数値です。実案件では正式な実績を掲載します。</p>
+          <div class="numbers-grid">
+            <div class="number-item">
+              <span class="number-value" data-count="2000">0</span>
+              <span class="number-suffix">件以上</span>
+              <span class="number-label">施術実績</span>
+            </div>
+            <div class="number-item">
+              <span class="number-value" data-count="89">0</span>
+              <span class="number-suffix">%</span>
+              <span class="number-label">リピート率</span>
+            </div>
+            <div class="number-item">
+              <span class="number-value" data-count="8">0</span>
+              <span class="number-suffix">年</span>
+              <span class="number-label">産後ケア専門</span>
+            </div>
+            <div class="number-item">
+              <span class="number-value" data-count="500">0</span>
+              <span class="number-suffix">件/年</span>
+              <span class="number-label">ご相談対応</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reasons-section" id="reasons">
         <div class="section-heading">
-          <p class="eyebrow">Reasons</p>
+          <p class="eyebrow serif">Reasons</p>
           <h2>はるいろ整体院が選ばれる理由</h2>
           <p>産後・育児中の方が、安心して相談しやすいことを大切にしています。</p>
         </div>
         <div class="reason-grid">
-          <article>
-            <span>01</span>
+          <article class="reason-card">
+            <div class="reason-icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M3.818 7.818a5.25 5.25 0 0 0 0 7.425L14 25.425l10.182-10.182a5.25 5.25 0 0 0-7.425-7.425L14 10.575l-2.757-2.757a5.25 5.25 0 0 0-7.425 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
             <h3>女性の悩みに寄り添う</h3>
-            <p>産後や育児中の身体の不安を、話しやすい言葉で丁寧に伺います。</p>
+            <p>産後や育児中の身体の不安を、話しやすい言葉で丁寧に伺います。「こんなことで相談していいの？」という気持ちも、安心してお話しください。</p>
           </article>
-          <article>
-            <span>02</span>
+          <article class="reason-card">
+            <div class="reason-icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 3.5v3.5m0 14v3.5M5.575 5.575l2.475 2.475m11.9 11.9l2.475 2.475M3.5 14H7m14 0h3.5M5.575 22.425l2.475-2.475m11.9-11.9l2.475-2.475" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="14" cy="14" r="4" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
             <h3>無理のないケア</h3>
-            <p>強い施術ではなく、状態に合わせた無理のない施術方針を提案します。</p>
+            <p>強い施術ではなく、状態に合わせた無理のない施術方針を提案します。「痛くない？」と確認しながら進めるので安心です。</p>
           </article>
-          <article>
-            <span>03</span>
+          <article class="reason-card">
+            <div class="reason-icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M10.5 21a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm7-7a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" stroke="currentColor" stroke-width="1.5"/><path d="M14 24.5c5.799 0 10.5-4.701 10.5-10.5S19.799 3.5 14 3.5 3.5 8.201 3.5 14 8.201 24.5 14 24.5z" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
             <h3>子ども連れ相談可</h3>
-            <p>育児中でも相談しやすいよう、落ち着いた雰囲気づくりを心がけています。</p>
+            <p>育児中でも相談しやすいよう、落ち着いた雰囲気づくりを心がけています。お子さまと一緒にお越しいただけます。</p>
           </article>
-          <article>
-            <span>04</span>
+          <article class="reason-card">
+            <div class="reason-icon">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true"><path d="M14 3.5c-1.75 3.5-7 5.25-7 10.5a7 7 0 0 0 14 0c0-5.25-5.25-7-7-10.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 21v-5m-3 2l3-3 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
             <h3>セルフケアも提案</h3>
-            <p>来院時だけでなく、日常で取り入れやすい身体の使い方もお伝えします。</p>
+            <p>来院時だけでなく、日常で取り入れやすい身体の使い方やストレッチもお伝えします。少しずつ、自分で整える力を育てます。</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="wave-divider wave-reasons-to-voice" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C360,0 720,60 1080,20 C1260,8 1380,25 1440,20 L1440,60 L0,60 Z" fill="currentColor"/></svg>
+      </div>
+
+      <section class="section voice" id="voice">
+        <div class="section-heading">
+          <p class="eyebrow serif">Voice</p>
+          <h2>お客様の声</h2>
+          <p>実際にご来院いただいた方の感想をご紹介します。<br /><small>※架空サンプルです。実案件ではご本人の許可を得て掲載します。</small></p>
+        </div>
+        <div class="voice-grid">
+          <article class="voice-card">
+            <div class="voice-stars" aria-label="5つ星評価">★★★★★</div>
+            <blockquote>
+              <p>産後3ヶ月で腰がつらくて初めて来院しました。整体は初めてで不安でしたが、先生がとても丁寧に話を聞いてくださり、安心して施術を受けられました。帰る頃には身体が軽くなった気がしました。</p>
+            </blockquote>
+            <footer>
+              <div class="voice-avatar">M</div>
+              <div>
+                <strong>M さん</strong>
+                <span>30代・産後3ヶ月</span>
+              </div>
+            </footer>
+          </article>
+          <article class="voice-card">
+            <div class="voice-stars" aria-label="5つ星評価">★★★★★</div>
+            <blockquote>
+              <p>2人目の産後から肩こりがひどくなり、友人の紹介で通い始めました。子連れで行けるのが本当にありがたいです。毎回セルフケアも教えてもらえるので、家でもストレッチを続けています。</p>
+            </blockquote>
+            <footer>
+              <div class="voice-avatar">K</div>
+              <div>
+                <strong>K さん</strong>
+                <span>30代・お子さん2人</span>
+              </div>
+            </footer>
+          </article>
+          <article class="voice-card">
+            <div class="voice-stars" aria-label="5つ星評価">★★★★★</div>
+            <blockquote>
+              <p>育休中に自分の身体もケアしたいと思い来院しました。「こんなことで来ていいのかな」と思っていましたが、先生が「大事なことですよ」と言ってくださって嬉しかったです。</p>
+            </blockquote>
+            <footer>
+              <div class="voice-avatar">S</div>
+              <div>
+                <strong>S さん</strong>
+                <span>20代・育休中</span>
+              </div>
+            </footer>
           </article>
         </div>
       </section>
 
       <section class="section services" id="services">
         <div class="section-heading">
-          <p class="eyebrow">Care</p>
+          <p class="eyebrow serif">Care</p>
           <h2>施術内容</h2>
           <p>専門用語を使いすぎず、初めての方にもわかりやすく流れを説明します。</p>
         </div>
@@ -227,9 +363,13 @@
         </div>
       </section>
 
+      <div class="wave-divider wave-services-to-flow" aria-hidden="true">
+        <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,40 C240,10 480,50 720,30 C960,10 1200,50 1440,25 L1440,60 L0,60 Z" fill="currentColor"/></svg>
+      </div>
+
       <section class="section flow" id="flow">
         <div class="section-heading">
-          <p class="eyebrow">Flow</p>
+          <p class="eyebrow serif">Flow</p>
           <h2>初回相談の流れ</h2>
           <p>予約後に何が起こるかがわかると、初めてでも安心して進められます。</p>
         </div>
@@ -243,23 +383,67 @@
         </ol>
       </section>
 
-      <section class="section price" id="price">
-        <div>
-          <p class="eyebrow">Price</p>
+      <section class="section staff-section" id="staff">
+        <div class="staff-layout">
+          <div class="staff-image">
+            <img src="./assets/staff-portrait.jpg" alt="院長のプロフィール写真（サンプル）" loading="lazy" />
+          </div>
+          <div class="staff-text">
+            <p class="eyebrow serif">Staff</p>
+            <h2>院長あいさつ</h2>
+            <p class="staff-name">春田 あかり<small>（架空の人物です）</small></p>
+            <p>
+              はるいろ整体院のページをご覧いただきありがとうございます。私自身、産後に身体の不調を経験し、「もっと早く相談すればよかった」と感じたことがきっかけで、この仕事を始めました。
+            </p>
+            <p>
+              育児中は自分のことを後回しにしがちですが、お母さんの身体が整うことで、日々の育児にも余裕が生まれます。ひとりで抱え込まず、まずはお気軽にご相談ください。
+            </p>
+            <div class="staff-qualifications">
+              <span>柔道整復師（サンプル）</span>
+              <span>産後ケア研修修了（サンプル）</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section price-section" id="price">
+        <div class="section-heading">
+          <p class="eyebrow serif">Price</p>
           <h2>料金</h2>
           <p>このセクションは架空サンプルです。実際の制作では、正式な料金・支払い方法・キャンセル規定を確認してから掲載します。</p>
         </div>
-        <div class="price-card">
-          <span>サンプル表示</span>
-          <h3>初回相談</h3>
-          <p class="price-number">要確認</p>
-          <p>料金や所要時間は、実際の事業者情報に合わせて差し替えてください。</p>
+        <div class="price-table">
+          <div class="price-card featured">
+            <div class="price-badge">おすすめ</div>
+            <h3>初回相談</h3>
+            <p class="price-number"><span>¥</span>5,500<small>（税込・サンプル）</small></p>
+            <p class="price-time">所要時間：約60分</p>
+            <ul>
+              <li>丁寧なカウンセリング</li>
+              <li>姿勢・身体の状態チェック</li>
+              <li>整体施術</li>
+              <li>セルフケアのご提案</li>
+            </ul>
+            <a class="button primary" href="#reserve">初回相談を予約する</a>
+          </div>
+          <div class="price-card">
+            <h3>2回目以降</h3>
+            <p class="price-number"><span>¥</span>4,400<small>（税込・サンプル）</small></p>
+            <p class="price-time">所要時間：約45分</p>
+            <ul>
+              <li>状態の確認</li>
+              <li>整体施術</li>
+              <li>セルフケアの見直し</li>
+            </ul>
+            <a class="button secondary" href="#reserve">予約する</a>
+          </div>
         </div>
+        <p class="price-notice">※料金は架空サンプルです。実案件では正式な料金をヒアリングしてから掲載します。</p>
       </section>
 
       <section class="section faq" id="faq">
         <div class="section-heading">
-          <p class="eyebrow">FAQ</p>
+          <p class="eyebrow serif">FAQ</p>
           <h2>よくある質問</h2>
         </div>
         <div class="faq-list">
@@ -269,7 +453,7 @@
           </details>
           <details>
             <summary>強い施術が苦手でも大丈夫ですか？</summary>
-            <p>初回に不安な点を伺い、状態に合わせた無理のない方針を相談します。</p>
+            <p>初回に不安な点を伺い、状態に合わせた無理のない方針を相談します。施術中も「痛くないですか？」と確認しながら進めます。</p>
           </details>
           <details>
             <summary>どんな服装で行けばいいですか？</summary>
@@ -279,35 +463,76 @@
             <summary>予約はLINEだけですか？</summary>
             <p>このサンプルではLINE予約をメイン導線にしています。電話やフォーム対応も必要に応じて追加できます。</p>
           </details>
+          <details>
+            <summary>どのくらいの頻度で通えばいいですか？</summary>
+            <p>身体の状態やご都合に合わせてご提案します。「月1回でも大丈夫？」など、お気軽にご相談ください。</p>
+          </details>
         </div>
       </section>
 
-      <section class="section access" id="access">
-        <div>
-          <p class="eyebrow">Access</p>
+      <section class="section access-section" id="access">
+        <div class="section-heading">
+          <p class="eyebrow serif">Access</p>
           <h2>店舗情報・アクセス</h2>
           <p>公開前には、住所・営業時間・駐車場・予約URLなどの事実確認が必要です。</p>
         </div>
-        <dl class="info-list">
-          <div><dt>店舗名</dt><dd>はるいろ整体院（架空サンプル）</dd></div>
-          <div><dt>所在地</dt><dd>サンプル用の架空住所です</dd></div>
-          <div><dt>営業時間</dt><dd>要確認</dd></div>
-          <div><dt>予約方法</dt><dd>LINE予約を想定</dd></div>
-        </dl>
+        <div class="access-layout">
+          <div class="map-placeholder">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 4C16.268 4 10 10.268 10 18c0 10.5 14 26 14 26s14-15.5 14-26c0-7.732-6.268-14-14-14z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="24" cy="18" r="5" stroke="currentColor" stroke-width="2"/></svg>
+            <p>実案件ではGoogleマップを埋め込みます</p>
+          </div>
+          <dl class="info-list">
+            <div><dt>店舗名</dt><dd>はるいろ整体院（架空サンプル）</dd></div>
+            <div><dt>所在地</dt><dd>サンプル用の架空住所です</dd></div>
+            <div><dt>営業時間</dt><dd>平日 10:00〜16:00（サンプル）</dd></div>
+            <div><dt>定休日</dt><dd>土日祝・年末年始（サンプル）</dd></div>
+            <div><dt>駐車場</dt><dd>要確認</dd></div>
+            <div><dt>予約方法</dt><dd>LINE予約を想定</dd></div>
+          </dl>
+        </div>
       </section>
 
       <section class="final-cta" id="reserve">
-        <p class="eyebrow">Reserve</p>
-        <h2>まずはLINEでお気軽にご相談ください</h2>
+        <div class="cta-decoration" aria-hidden="true"></div>
+        <p class="eyebrow serif">Reserve</p>
+        <h2>まずはLINEでお気軽に<br class="sp-only" />ご相談ください</h2>
         <p>身体の悩みをひとりで抱え込まず、今の状態を一緒に確認するところから始めましょう。</p>
-        <a class="button primary large" href="https://example.com" aria-label="LINE予約のサンプルリンク">LINEで初回相談を予約する</a>
+        <a class="button primary large" href="https://example.com" aria-label="LINE予約のサンプルリンク">
+          LINEで初回相談を予約する
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-4-4 4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
         <small>リンクはサンプルです。実際の制作時に正しい予約URLへ差し替えてください。</small>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p><strong>はるいろ整体院</strong> - AIホームページ制作教材用の架空サンプルサイト</p>
-      <p>医療的な効果効能を保証するものではありません。実案件では事実確認と表現確認を行ってください。</p>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="./assets/favicon.svg" alt="" width="40" height="40" />
+          <div>
+            <strong>はるいろ整体院</strong>
+            <small>産後整体・骨盤ケア</small>
+          </div>
+        </div>
+        <nav class="footer-nav" aria-label="フッターメニュー">
+          <a href="#problems">初めての方</a>
+          <a href="#concept">当院について</a>
+          <a href="#reasons">選ばれる理由</a>
+          <a href="#voice">お客様の声</a>
+          <a href="#services">施術内容</a>
+          <a href="#price">料金</a>
+          <a href="#staff">スタッフ紹介</a>
+          <a href="#access">アクセス</a>
+        </nav>
+        <div class="footer-info">
+          <p>受付時間：平日 10:00〜16:00（完全予約制）</p>
+          <p>AIホームページ制作教材用の架空サンプルサイト</p>
+          <p>医療的な効果効能を保証するものではありません。</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 はるいろ整体院（架空サンプル）</p>
+      </div>
     </footer>
   </body>
 </html>
