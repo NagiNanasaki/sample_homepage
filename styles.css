@@ -100,22 +100,47 @@ a {
 }
 
 .nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: clamp(18px, 3vw, 36px);
-  padding: 0 clamp(20px, 4vw, 56px) 14px;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: clamp(20px, 4vw, 56px);
+  z-index: 30;
+  display: grid;
+  width: min(360px, calc(100vw - 32px));
+  padding: 12px;
   color: var(--text);
   font-size: 14px;
   font-weight: 700;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(31, 43, 39, 0.1);
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(31, 43, 39, 0.16);
+  backdrop-filter: blur(14px);
+}
+
+.nav[hidden] {
+  display: none;
 }
 
 .nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
   text-decoration: none;
 }
 
 .nav a:hover {
   color: var(--green-dark);
+  background: var(--surface-green);
+}
+
+.nav a::after {
+  color: #37aec6;
+  content: ">";
+  font-size: 18px;
+  font-weight: 800;
 }
 
 .header-actions {
@@ -127,6 +152,7 @@ a {
 .header-phone,
 .header-pill,
 .header-cta,
+.menu-toggle,
 .button {
   display: inline-flex;
   align-items: center;
@@ -158,6 +184,32 @@ a {
   color: #fff;
   background: var(--green-dark);
   box-shadow: 0 10px 24px rgba(63, 128, 102, 0.22);
+}
+
+.menu-toggle {
+  gap: 10px;
+  color: var(--green-dark);
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid rgba(47, 115, 95, 0.2);
+}
+
+.menu-toggle[aria-expanded="true"] {
+  color: #fff;
+  background: var(--green-dark);
+}
+
+.menu-icon {
+  display: grid;
+  gap: 4px;
+  width: 18px;
+}
+
+.menu-icon span {
+  display: block;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
 }
 
 .button.secondary {
@@ -768,7 +820,7 @@ h3 {
   }
 
   .nav {
-    display: none;
+    right: 16px;
   }
 
   .split,
@@ -809,7 +861,7 @@ h3 {
 
 @media (max-width: 640px) {
   .site-header {
-    position: static;
+    position: sticky;
   }
 
   .header-main {
@@ -845,6 +897,21 @@ h3 {
     min-height: 40px;
     padding: 0 14px;
     font-size: 13px;
+  }
+
+  .menu-toggle {
+    width: 44px;
+    min-height: 40px;
+    padding: 0;
+  }
+
+  .menu-toggle > span:last-child {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
   }
 
   .hero {

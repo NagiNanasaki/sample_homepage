@@ -1,4 +1,42 @@
 const slider = document.querySelector("[data-slider]");
+const menuToggle = document.querySelector("[data-menu-toggle]");
+const menu = document.querySelector("[data-menu]");
+
+if (menuToggle && menu) {
+  const closeMenu = () => {
+    menu.hidden = true;
+    menuToggle.setAttribute("aria-expanded", "false");
+  };
+
+  const openMenu = () => {
+    menu.hidden = false;
+    menuToggle.setAttribute("aria-expanded", "true");
+  };
+
+  menuToggle.addEventListener("click", () => {
+    if (menu.hidden) {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  });
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!menu.hidden && !menu.contains(event.target) && !menuToggle.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+}
 
 if (slider) {
   const slides = [...slider.querySelectorAll("[data-slide]")];

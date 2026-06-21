@@ -13,7 +13,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="./assets/slide-room-bright.jpg" />
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./styles.css?v=header-brand-3" />
+    <link rel="stylesheet" href="./styles.css?v=hamburger-menu-1" />
     <script src="./scripts.js" defer></script>
   </head>
   <body>
@@ -32,9 +32,17 @@
           <span class="header-phone">完全予約制</span>
           <a class="header-pill" href="#reserve">予約について</a>
           <a class="header-cta" href="#reserve">LINEで相談</a>
+          <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+            <span class="menu-icon" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+            <span>メニュー</span>
+          </button>
         </div>
       </div>
-      <nav class="nav" aria-label="主要メニュー">
+      <nav class="nav" id="site-menu" aria-label="主要メニュー" data-menu hidden>
         <a href="#problems">初めての方</a>
         <a href="#concept">当院について</a>
         <a href="#reasons">選ばれる理由</a>
