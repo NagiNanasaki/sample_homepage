@@ -55,25 +55,25 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 14px clamp(20px, 4vw, 56px) 10px;
+  padding: 18px clamp(20px, 4vw, 56px) 12px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   text-decoration: none;
-  min-width: 236px;
+  min-width: 340px;
 }
 
 .brand-mark {
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  width: 42px;
-  height: 42px;
+  width: 60px;
+  height: 60px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 14px;
 }
 
 .brand-mark img {
@@ -87,16 +87,16 @@ a {
 }
 
 .brand strong {
-  font-size: 19px;
+  font-size: 26px;
   font-weight: 800;
-  line-height: 1.16;
+  line-height: 1.12;
 }
 
 .brand small {
   color: var(--green-dark);
-  font-size: 11px;
+  font-size: 13px;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .nav {
@@ -104,7 +104,7 @@ a {
   align-items: center;
   justify-content: flex-end;
   gap: clamp(18px, 3vw, 36px);
-  padding: 0 clamp(20px, 4vw, 56px) 12px;
+  padding: 0 clamp(20px, 4vw, 56px) 16px;
   color: var(--text);
   font-size: 14px;
   font-weight: 700;
@@ -804,16 +804,17 @@ h3 {
 
   .brand {
     min-width: 0;
-    gap: 10px;
+    gap: 12px;
   }
 
   .brand-mark {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
   }
 
   .brand strong {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .brand small {
