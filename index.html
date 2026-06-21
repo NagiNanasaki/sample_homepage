@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=v3-polish" />
+    <link rel="stylesheet" href="./styles.css?v=hero-flex-15" />
     <script src="./scripts.js" defer></script>
   </head>
   <body>
@@ -63,6 +63,7 @@
 
     <main id="top">
       <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-layout">
         <div class="hero-media">
           <div class="hero-slider" data-slider>
             <figure class="hero-slide is-active" data-slide>
@@ -92,55 +93,58 @@
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12m-4-4 4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
           </div>
-          <a class="recruit-badge" href="https://example.com" aria-label="採用情報のサンプルリンク">
-            <span>RECRUIT</span>
-            <strong>採用サイト</strong>
-            <small>サンプルリンク</small>
-          </a>
         </div>
-        <div class="guide-cards" aria-label="目的別メニュー">
+        <div class="guide-panel">
+          <div class="guide-panel-header">
+            <img src="./assets/favicon.svg" alt="" width="48" height="48" />
+            <div>
+              <small>産後整体・骨盤ケア</small>
+              <strong>はるいろ整体院</strong>
+            </div>
+          </div>
+          <div class="guide-cards" aria-label="目的別メニュー">
           <a class="guide-card" href="#problems">
             <span class="guide-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4m6 2a10 10 0 1 1-20 0 10 10 0 0 1 20 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            <strong>はじめて相談される方</strong>
-            <small>不安や悩みを確認する</small>
+            <strong>はじめての方</strong>
           </a>
           <a class="guide-card" href="#flow">
             <span class="guide-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 8v4l3 3m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            <strong>施術の流れを知りたい方</strong>
-            <small>予約から初回相談まで</small>
+            <strong>施術の流れ</strong>
           </a>
           <a class="guide-card" href="#services">
             <span class="guide-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4.318 6.318a4.5 4.5 0 0 0 0 6.364L12 20.364l7.682-7.682a4.5 4.5 0 0 0-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 0 0-6.364 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            <strong>産後ケアを受けたい方</strong>
-            <small>腰・骨盤・肩のケア</small>
+            <strong>産後ケア</strong>
           </a>
           <a class="guide-card" href="#price">
             <span class="guide-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 1 0 0 7h5a3.5 3.5 0 1 1 0 7H6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            <strong>料金を確認したい方</strong>
-            <small>掲載前に事実確認が必要</small>
+            <strong>料金</strong>
           </a>
           <a class="guide-card" href="#faq">
             <span class="guide-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            <strong>よくある質問を見たい方</strong>
-            <small>子ども連れ・服装など</small>
+            <strong>よくある質問</strong>
           </a>
           <a class="guide-card" href="#access">
             <span class="guide-icon">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="11" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
             </span>
-            <strong>アクセスを確認したい方</strong>
-            <small>店舗情報と予約方法</small>
+            <strong>アクセス</strong>
           </a>
+        </div>
+        </div>
+        <a class="recruit-badge" href="https://example.com" aria-label="採用情報のサンプルリンク">
+          <span>RECRUIT</span>
+          <strong>採用サイト</strong>
+        </a>
         </div>
         <div class="visit-panel" aria-label="受付情報">
           <div class="hours-card">

@@ -300,14 +300,21 @@ a {
 .hero {
   position: relative;
   padding-bottom: clamp(52px, 7vw, 86px);
-  background: #edeae3;
+  background: var(--bg);
+}
+
+.hero-layout {
+  position: relative;
+  display: flex;
 }
 
 .hero-media {
   position: relative;
+  flex: 1 1 0%;
   min-height: clamp(480px, 52vw, 680px);
   overflow: hidden;
   background: var(--green-deeper);
+  border-radius: 0 0 60px 0;
 }
 
 .hero-media::after {
@@ -345,13 +352,12 @@ a {
 
 .hero-controls {
   position: absolute;
-  right: 50%;
-  bottom: 72px;
+  left: clamp(28px, 6vw, 100px);
+  bottom: 32px;
   z-index: 3;
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  transform: translateX(50%);
 }
 
 .hero-dot,
@@ -447,20 +453,26 @@ a {
   box-shadow: 0 12px 32px rgba(47, 115, 95, 0.4);
 }
 
+
+/* ─── Recruit Badge ─── */
+
 .recruit-badge {
   position: absolute;
-  right: clamp(20px, 5vw, 72px);
-  bottom: 56px;
+  right: 345px;
+  bottom: 130px;
   z-index: 4;
-  display: grid;
-  place-items: center;
-  width: 140px;
-  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  width: 120px;
+  height: 120px;
   color: var(--green-dark);
   text-align: center;
   text-decoration: none;
   background: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(47, 115, 95, 0.1);
+  border: 1px solid rgba(47, 115, 95, 0.12);
   border-radius: 50%;
   box-shadow: var(--shadow);
   backdrop-filter: blur(12px);
@@ -471,42 +483,24 @@ a {
 .recruit-badge:hover {
   color: #fff;
   background: var(--green-dark);
-  transform: translateY(-4px) scale(1.04);
+  transform: translateY(-4px) scale(1.05);
   box-shadow: var(--shadow-lg);
 }
 
-.recruit-badge span,
-.recruit-badge strong,
-.recruit-badge small {
-  display: block;
-}
-
 .recruit-badge span {
-  align-self: end;
   color: var(--sky);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.08em;
 }
 
-.recruit-badge:hover span,
-.recruit-badge:hover small {
+.recruit-badge:hover span {
   color: rgba(255, 255, 255, 0.75);
 }
 
 .recruit-badge strong {
-  align-self: center;
-  margin-top: -6px;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.1;
-}
-
-.recruit-badge small {
-  align-self: start;
-  margin-top: -10px;
-  color: var(--muted);
-  font-size: 10px;
-  font-weight: 700;
 }
 
 /* ─── Eyebrow ─── */
@@ -561,42 +555,71 @@ h3 {
 
 /* ─── Guide Cards ─── */
 
+.guide-panel {
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px 28px;
+  background: var(--bg);
+}
+
+.guide-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.guide-panel-header img {
+  width: 48px;
+  height: 48px;
+}
+
+.guide-panel-header small {
+  display: block;
+  color: var(--green-dark);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.guide-panel-header strong {
+  display: block;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
 .guide-cards {
-  position: relative;
-  z-index: 2;
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 2px;
-  width: min(1200px, calc(100% - 48px));
-  margin: -48px auto 0;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
 }
 
 .guide-card {
   display: grid;
   justify-items: center;
-  align-content: start;
-  gap: 4px;
-  min-height: 180px;
-  padding: 28px 14px 24px;
-  color: inherit;
+  align-content: center;
+  gap: 8px;
+  padding: 20px 10px;
+  color: var(--text);
   text-align: center;
   text-decoration: none;
   background: #fff;
-  border: 1px solid rgba(31, 43, 39, 0.05);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
   transition: all var(--transition);
 }
 
-.guide-card:first-child {
-  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
-}
-
+.guide-card:first-child,
 .guide-card:last-child {
-  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  border-radius: var(--radius);
 }
 
 .guide-card:hover {
   background: var(--surface-green);
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow);
   z-index: 1;
 }
@@ -604,9 +627,8 @@ h3 {
 .guide-icon {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
-  margin-bottom: 8px;
+  width: 48px;
+  height: 48px;
   color: var(--green-dark);
   background: var(--bg-green);
   border-radius: 50%;
@@ -621,16 +643,13 @@ h3 {
 .guide-card strong {
   display: block;
   color: var(--text);
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .guide-card small {
-  display: block;
-  margin-top: 2px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 1.5;
+  display: none;
 }
 
 /* ─── Visit Panel ─── */
@@ -1716,18 +1735,24 @@ h3 {
     right: 16px;
   }
 
-  .guide-cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    width: min(720px, calc(100% - 32px));
-    margin-top: -40px;
+  .guide-panel {
+    flex: 0 0 280px;
+    gap: 16px;
+    padding: 20px 18px;
   }
 
-  .guide-card:nth-child(3) {
-    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  .guide-card {
+    padding: 14px 8px;
+    gap: 6px;
   }
 
-  .guide-card:nth-child(4) {
-    border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  .guide-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .guide-card strong {
+    font-size: 11.5px;
   }
 
   .visit-panel {
@@ -1890,58 +1915,73 @@ h3 {
   }
 
   .hero-controls {
-    bottom: 100px;
+    left: 20px;
+    bottom: 20px;
     gap: 14px;
   }
 
   .recruit-badge {
-    right: 16px;
-    bottom: 80px;
-    width: 100px;
-    height: 100px;
+    position: absolute;
+    right: 12px;
+    bottom: 220px;
+    width: 80px;
+    height: 80px;
   }
 
   .recruit-badge span {
-    font-size: 9px;
+    font-size: 8px;
   }
 
   .recruit-badge strong {
-    font-size: 15px;
+    font-size: 14px;
   }
 
-  .recruit-badge small {
+  .hero-cta {
+    display: none;
+  }
+
+  .hero-layout {
+    flex-direction: column;
+  }
+
+  .hero-media {
+    border-radius: 0;
+  }
+
+  .guide-panel {
+    flex: none;
+    padding: 0 12px 12px;
+    gap: 12px;
+  }
+
+  .guide-panel-header {
     display: none;
   }
 
   .guide-cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 6px;
-    width: calc(100% - 24px);
-    margin-top: -40px;
   }
 
   .guide-card,
   .guide-card:first-child,
-  .guide-card:last-child,
-  .guide-card:nth-child(3),
-  .guide-card:nth-child(4) {
-    min-height: 130px;
-    padding: 18px 10px;
-    border-radius: var(--radius);
+  .guide-card:last-child {
+    padding: 14px 8px;
+    gap: 6px;
   }
 
   .guide-icon {
-    width: 44px;
-    height: 44px;
-    margin-bottom: 6px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .guide-icon svg {
+    width: 20px;
+    height: 20px;
   }
 
   .guide-card strong {
-    font-size: 13px;
-  }
-
-  .guide-card small {
-    display: none;
+    font-size: 11px;
   }
 
   .visit-panel {
