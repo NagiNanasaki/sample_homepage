@@ -55,25 +55,25 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 20px clamp(20px, 4vw, 56px) 14px;
+  padding: 15px clamp(20px, 4vw, 56px) 10px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   text-decoration: none;
-  min-width: 440px;
+  min-width: 320px;
 }
 
 .brand-mark {
   display: grid;
   place-items: center;
   flex: 0 0 auto;
-  width: 76px;
-  height: 76px;
+  width: 56px;
+  height: 56px;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 14px;
 }
 
 .brand-mark img {
@@ -87,14 +87,14 @@ a {
 }
 
 .brand strong {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 800;
-  line-height: 1.08;
+  line-height: 1.12;
 }
 
 .brand small {
   color: var(--green-dark);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   line-height: 1.25;
 }
@@ -104,7 +104,7 @@ a {
   align-items: center;
   justify-content: flex-end;
   gap: clamp(18px, 3vw, 36px);
-  padding: 0 clamp(20px, 4vw, 56px) 18px;
+  padding: 0 clamp(20px, 4vw, 56px) 14px;
   color: var(--text);
   font-size: 14px;
   font-weight: 700;
@@ -263,7 +263,7 @@ a {
 
 .hero-message {
   position: absolute;
-  top: 42%;
+  top: 40%;
   left: clamp(24px, 6vw, 92px);
   z-index: 2;
   width: min(620px, calc(100% - 48px));
@@ -740,22 +740,22 @@ h3 {
 @media (max-width: 920px) {
   .header-main {
     align-items: flex-start;
-    gap: 18px;
-  }
-
-  .brand {
-    min-width: 300px;
     gap: 16px;
   }
 
+  .brand {
+    min-width: 260px;
+    gap: 14px;
+  }
+
   .brand-mark {
-    width: 62px;
-    height: 62px;
-    border-radius: 15px;
+    width: 54px;
+    height: 54px;
+    border-radius: 13px;
   }
 
   .brand strong {
-    font-size: 25px;
+    font-size: 22px;
   }
 
   .brand small {
@@ -828,13 +828,13 @@ h3 {
   }
 
   .brand-mark {
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
     border-radius: 12px;
   }
 
   .brand strong {
-    font-size: 19px;
+    font-size: 17px;
   }
 
   .brand small {
