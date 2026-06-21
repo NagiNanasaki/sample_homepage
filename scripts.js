@@ -38,6 +38,80 @@ if (menuToggle && menu) {
   });
 }
 
+const revealTargets = [
+  ".guide-card",
+  ".visit-panel",
+  ".sample-notice",
+  ".section-heading",
+  ".split > div",
+  ".concept-card",
+  ".check-grid article",
+  ".reason-grid article",
+  ".service-steps article",
+  ".flow-list li",
+  ".price > div",
+  ".price-card",
+  ".faq-list details",
+  ".access > div",
+  ".info-list",
+  ".final-cta",
+].join(",");
+
+const revealItems = [...document.querySelectorAll(revealTargets)];
+
+if (revealItems.length > 0) {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  revealItems.forEach((item, index) => {
+    item.classList.add("scroll-reveal");
+    item.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+  });
+
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach((item) => item.classList.add("is-visible"));
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting || entry.boundingClientRect.top < window.innerHeight) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        rootMargin: "0px 0px -12% 0px",
+        threshold: 0.12,
+      },
+    );
+
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const revealVisibleItems = () => {
+      revealItems.forEach((item) => {
+        if (!item.classList.contains("is-visible") && item.getBoundingClientRect().top < window.innerHeight * 0.92) {
+          item.classList.add("is-visible");
+        }
+      });
+    };
+
+    let revealTicking = false;
+    const queueRevealCheck = () => {
+      if (!revealTicking) {
+        revealTicking = true;
+        window.requestAnimationFrame(() => {
+          revealVisibleItems();
+          revealTicking = false;
+        });
+      }
+    };
+
+    window.addEventListener("scroll", queueRevealCheck, { passive: true });
+    window.addEventListener("resize", queueRevealCheck);
+    revealVisibleItems();
+  }
+}
+
 if (slider) {
   const slides = [...slider.querySelectorAll("[data-slide]")];
   const dots = [...slider.querySelectorAll("[data-slide-to]")];
